@@ -3,6 +3,7 @@ package org.multi_access_file;
 import java.util.Random;
 
 public abstract class GenerateLine {
+	private static final int BOUND = 1024;
 	private GenerateLine() {
 	}
 
@@ -14,7 +15,7 @@ public abstract class GenerateLine {
 		StringBuilder sb = new StringBuilder();
 
 		for (int i = 0; i < size; i++) {
-			sb.append((char) random.nextInt(128));
+			sb.append((char) random.nextInt(BOUND));
 		}
 
 		return sb.toString();
