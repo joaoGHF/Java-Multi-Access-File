@@ -6,12 +6,17 @@ import java.io.IOException;
 public class App {
 	public static void main(String[] args) {
 		File file = new File("/arq.txt");
+
 		try {
 			file.createNewFile();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 		System.out.println("exists   : " + file.exists());
 		System.out.println("can write: " + file.canWrite());
+
+		FileController fileController = new FileController(file);
+		fileController.writeLine("Hello World");
 	}
 }
