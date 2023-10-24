@@ -1,22 +1,15 @@
 package org.multi_access_file;
 
 import java.io.File;
-import java.io.IOException;
 
 public class App {
 	public static void main(String[] args) {
-		File file = new File("/arq.txt");
-
-		try {
-			file.createNewFile();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		File file = new File("arq.txt");
 
 		System.out.println("exists   : " + file.exists());
 		System.out.println("can write: " + file.canWrite());
 
-		FileController fileController = new FileController(file);
-		fileController.writeLine("Hello World");
+		FileController.initFile(file);
+		FileController.writeLine(GenerateLine.getLine(50), file);
 	}
 }
