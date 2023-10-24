@@ -10,6 +10,15 @@ public class App {
 		System.out.println("can write: " + file.canWrite());
 
 		FileController.initFile(file);
+		FileController.clearFile(file);
+
 		FileController.writeLine(GenerateLine.getLine(50), file);
+		FileController.writeLine(GenerateLine.getLine(50), file);
+		FileController.writeLine(GenerateLine.getLine(50), file);
+		FileController.writeLine(GenerateLine.getLine(50), file);
+
+		System.out.println("\nReading");
+		
+		FileController.readLines(file).forEach(System.out::println);
 	}
 }
