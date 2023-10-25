@@ -1,6 +1,7 @@
 package org.multi_access_file;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class App {
 	public static void main(String[] args) {
@@ -12,13 +13,17 @@ public class App {
 		FileController.initFile(file);
 		FileController.clearFile(file);
 
-		FileController.writeLine(GenerateLine.getLine(50), file);
-		FileController.writeLine(GenerateLine.getLine(50), file);
-		FileController.writeLine(GenerateLine.getLine(50), file);
-		FileController.writeLine(GenerateLine.getLine(50), file);
+		ArrayList<Thread> writeThreads = new ArrayList<>();
+		for (int i = 0; i < 100; i++) { // TODO: criar var para armazenar o numero de threds writers
+			writeThreads.add(new WriteThread(file));
+		}
 
-		System.out.println("\nReading");
+		for (Thread writeThread : writeThreads) {
+			writeThread.start();
+		}
+
+		//System.out.println("\nReading");
 		
-		FileController.readLines(file).forEach(System.out::println);
+		//FileController.readLines(file).forEach(System.out::println);
 	}
 }
