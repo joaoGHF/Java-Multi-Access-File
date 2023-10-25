@@ -1,13 +1,9 @@
 package org.multi_access_file;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 public class FileController {
 	public static void initFile(File file) {
@@ -28,7 +24,6 @@ public class FileController {
 	public static synchronized void writeLine(String line, File staticFile) {
 		synchronized (staticFile) {
 			if (staticFile.canWrite()) {
-				//try (BufferedWriter bf = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(staticFile)))) {
 				try (BufferedWriter bf = new BufferedWriter(new FileWriter(staticFile, true))) {
 					bf.write(line);
 					bf.newLine();
@@ -42,28 +37,6 @@ public class FileController {
 				System.out.println("Not can write in file: " + staticFile.getName() + " in path "
 						+ staticFile.getPath());
 			}
-		}
-	}
-
-	public static synchronized ArrayList<String> readLines(File staticFile) {
-		synchronized (staticFile) {
-			if (staticFile.canRead()) {
-				try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(staticFile)))) {
-					ArrayList<String> lines = new ArrayList<>();
-					while (br.ready()) {
-						lines.add(br.readLine());
-					}
-
-					return lines;
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			} else {
-				System.out.println("Not can read from the file: " + staticFile.getName() + " in path "
-						+ staticFile.getPath());
-			}
-
-			return null;
 		}
 	}
 

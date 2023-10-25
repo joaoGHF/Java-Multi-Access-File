@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class App {
+	private static final int NUMBER_THREADS = 100;
 	public static void main(String[] args) {
 		File file = new File("arq.txt");
 
@@ -11,17 +12,12 @@ public class App {
 		FileController.clearFile(file);
 
 		ArrayList<Thread> writeThreads = new ArrayList<>();
-		for (int i = 0; i < 100; i++) { // TODO: criar var para armazenar o numero de threds writers
+		for (int i = 0; i < NUMBER_THREADS; i++) {
 			writeThreads.add(new WriteThread(file));
 		}
 
 		for (Thread writeThread : writeThreads) {
 			writeThread.start();
 		}
-
-		// TODO: criar e utilizar uma Thread para leitura do arquivo
-
-		/*System.out.println("\nReading");
-		FileController.readLines(file).forEach(System.out::println);*/
 	}
 }
