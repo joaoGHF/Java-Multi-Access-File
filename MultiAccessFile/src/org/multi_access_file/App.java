@@ -7,9 +7,6 @@ public class App {
 	public static void main(String[] args) {
 		File file = new File("arq.txt");
 
-		System.out.println("exists   : " + file.exists());
-		System.out.println("can write: " + file.canWrite());
-
 		FileController.initFile(file);
 		FileController.clearFile(file);
 
