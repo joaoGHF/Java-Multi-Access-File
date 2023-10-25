@@ -22,8 +22,9 @@ public class App {
 			writeThread.start();
 		}
 
-		//System.out.println("\nReading");
-		
-		//FileController.readLines(file).forEach(System.out::println);
+		// TODO: criar e utilizar uma Thread para leitura do arquivo
+
+		/*System.out.println("\nReading");
+		FileController.readLines(file).forEach(System.out::println);*/
 	}
 }
