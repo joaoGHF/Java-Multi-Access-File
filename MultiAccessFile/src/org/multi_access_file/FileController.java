@@ -19,10 +19,13 @@ import java.io.IOException;
  * @see org.multi_access_file.FileController#clearFile(File)
  */
 public abstract class FileController {
-	// TODO: continue here
-	/** <p>
-	 * 
+	/**
+	 * <p>
+	 * The method {@code initFile(File)} receive as a parameter a {@code File}
+	 * object. If the file exists, the method will print it, else the method will
+	 * try create the file. Warning! This method is unsynchronized.
 	 * </p>
+	 * 
 	 * @param file is a {@code File} object, must be an file, not a directory.
 	 */
 	public static void initFile(File file) {
@@ -40,6 +43,17 @@ public abstract class FileController {
 			}
 	}
 
+	/**
+	 * <p>
+	 * The method {@code writeLine(String, File)} is a synchronized method that will
+	 * try create a {@code BufferedWriter} using as parameter a {@code FileWriter} with the... // TODO: continue here
+	 * </p>
+	 * 
+	 * @param line       is of the type {@code String} and represents the to be
+	 *                   writed.
+	 * @param staticFile is of the type {@code File} and is the file that will be
+	 *                   writed the line.
+	 */
 	public static synchronized void writeLine(String line, File staticFile) {
 		synchronized (staticFile) {
 			if (staticFile.canWrite()) {

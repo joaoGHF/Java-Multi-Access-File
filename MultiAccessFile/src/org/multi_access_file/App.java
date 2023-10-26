@@ -38,7 +38,7 @@ public class App {
 	 * threads.
 	 * </p>
 	 * 
-	 * @param args are dont used in this program
+	 * @param args are dont used in this program.
 	 * 
 	 * @see org.multi_access_file.FileController#initFile(File)
 	 * @see org.multi_access_file.FileController#clearFile(File)
