@@ -2,7 +2,7 @@ package org.multi_access_file;
 
 import java.io.File;
 import java.util.ArrayList;
-
+// TODO: add header
 /**
  * <p>
  * The class {@code App} is the main class of this project. The
@@ -19,6 +19,9 @@ import java.util.ArrayList;
  * @see org.multi_access_file.WriteThread
  * @see java.util.ArrayList
  * @see java.lang.Thread
+ * 
+ * @author joaoGHF
+ * @version 1.0.0
  */
 public class App {
 	/**

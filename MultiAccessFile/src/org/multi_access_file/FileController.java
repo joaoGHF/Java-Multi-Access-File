@@ -46,10 +46,13 @@ public abstract class FileController {
 	/**
 	 * <p>
 	 * The method {@code writeLine(String, File)} is a synchronized method that will
-	 * try create a {@code BufferedWriter} using as parameter a {@code FileWriter} with the... // TODO: continue here
+	 * try create a {@code BufferedWriter} using as a parameter a {@code FileWriter}
+	 * with the {@code File} object and the value for append setted {@code true}. In
+	 * the {@code try} block the {@code String} received is written in the
+	 * {@code File}.
 	 * </p>
 	 * 
-	 * @param line       is of the type {@code String} and represents the to be
+	 * @param line       is of the type {@code String} and represents the text to be
 	 *                   writed.
 	 * @param staticFile is of the type {@code File} and is the file that will be
 	 *                   writed the line.
@@ -73,6 +76,18 @@ public abstract class FileController {
 		}
 	}
 
+	/**
+	 * <p>
+	 * The method {@code clearFile(File)} is a synchronized method that will try
+	 * create a {@code BufferedWriter} using as a parameter a {@code FileWriter}
+	 * with the {@code File} object and the value for append setted {@code false}.
+	 * In the try block this will write a void String with the
+	 * {@code BufferedWriter} and that will not append, then clear the file.
+	 * </p>
+	 * 
+	 * @param staticFile is of the type {@code File} and is the file that will be
+	 *                   cleared.
+	 */
 	public static void clearFile(File staticFile) {
 		synchronized (staticFile) {
 			if (staticFile.canWrite()) {
