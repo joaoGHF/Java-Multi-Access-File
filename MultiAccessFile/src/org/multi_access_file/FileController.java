@@ -53,9 +53,9 @@ public abstract class FileController {
 	 * </p>
 	 * 
 	 * @param line       is of the type {@code String} and represents the text to be
-	 *                   writed.
+	 *                   written.
 	 * @param staticFile is of the type {@code File} and is the file that will be
-	 *                   writed the line.
+	 *                   written the line.
 	 */
 	public static synchronized void writeLine(String line, File staticFile) {
 		synchronized (staticFile) {

@@ -14,8 +14,7 @@ public abstract class GenerateLine {
 	/**
 	 * <p>
 	 * The attribute {@code BOUND} is a private static final int, that represents
-	 * the
-	 * bound size for chars used in the {@link GenerateLine#getLine(int)}.
+	 * the bound size for chars used in the {@link GenerateLine#getLine(int)}.
 	 * </p>
 	 */
 	private static final int BOUND = 1024;
@@ -68,7 +67,8 @@ public abstract class GenerateLine {
 	 * <p>
 	 * The static method {@code getLines()} is used to get a array of Strings with
 	 * randomic chars. It simply create an array of Strings and fills it in a for
-	 * loop with the method {@link GenerateLine#getLine(int)}. Finally return the array.
+	 * loop with the method {@link GenerateLine#getLine(int)}. Finally return the
+	 * array.
 	 * </p>
 	 * 
 	 * @param maxSize is a {@code int} that represents the max lenght of the
