@@ -36,10 +36,16 @@ public class WriteThread extends Thread {
         this.file = file;
     }
 
-    // TODO: continue here
     /**
      * <p>
-     * The {@code run()} method is ...
+     * The {@code run()} method is the method performed in the execution of a
+     * {@code WriteThread} thread. It uses a {@code for loop} to executes how much
+     * the {@link WriteThread#REPETITIONS} indicates. In the loop, a {@code String}
+     * is formated to get a text with the thread name and a generated line. Next,
+     * uses the synchronized method {@link FileController#writeLine(String, File)}
+     * to write (append) this text in the file {@link WriteThread#file}. The thread
+     * will try sleep after the text is written. When this current thread is
+     * finalizing it will print a message incacating that the thread was ended.
      * </p>
      */
     @Override
